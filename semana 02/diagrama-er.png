@@ -1,0 +1,53 @@
+┌──────────────┐
+│    PLANO     │
+├──────────────┤
+│ PK id_plano  │
+│ nome         │
+│ valor_mensal │
+│ duracao_meses│
+└──────┬───────┘
+       │ 1:N
+       │
+┌──────▼───────┐
+│    ALUNO     │
+├──────────────┤
+│ PK id_aluno  │
+│ nome         │
+│ cpf          │
+│ data_nasc.   │
+│ telefone     │
+│ email        │
+│ FK id_plano  │
+└──────┬───────┘
+       │ 1:N
+       │
+┌──────▼──────────────┐
+│   MATRICULA_AULA    │
+├─────────────────────┤
+│ PK/FK id_aluno      │
+│ PK/FK id_aula       │
+└──────────┬──────────┘
+           │ N:1
+           │
+    ┌──────▼───────┐
+    │     AULA     │
+    ├──────────────┤
+    │ PK id_aula   │
+    │ nome         │
+    │ modalidade   │
+    │ horario      │
+    │ capacidade   │
+    │ FK id_prof.  │
+    └──────┬───────┘
+           │ N:1
+           │
+    ┌──────▼────────────┐
+    │    PROFESSOR      │
+    ├───────────────────┤
+    │ PK id_professor   │
+    │ nome              │
+    │ cref              │
+    │ especialidade     │
+    │ telefone           │
+    │ email              │
+    └───────────────────┘
